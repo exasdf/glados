@@ -1,5 +1,6 @@
-__author__ = 'ex'
 
-print "main"
-print "asfd"
-print "2"
+
+
+if __name__ == '__main__':
+    print ("Hello world!!")
+    pass
