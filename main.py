@@ -23,7 +23,7 @@ class Dog(Animal):
       print "Woof!"
 
 
-d = Dog()
-d.whoAmI()
-d.eat()
-d.bark()
+dog = Dog()
+dog.whoAmI()
+dog.eat()
+dog.bark()
