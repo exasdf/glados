@@ -1,4 +1,4 @@
-import optparse
+import argparse
 
 class vsphere(object):
 
@@ -9,10 +9,16 @@ class vsphere(object):
         print "Test2"
 
 def main():
-    print "Main"
-    parser = optparse.OptionParser()
-    parser.add_option('--list', action='store_true', dest='list', default=False, help='Output inventory groups and hosts')
-    print
+    parser = argparse.ArgumentParser(description='Process some integers.')
+    parser.add_argument('integers', metavar='N', type=int, nargs='+',
+                       help='an integer for the accumulator')
+    parser.add_argument('--sum', dest='accumulate', action='store_const',
+                       const=sum, default=max,
+                       help='sum the integers (default: find the max)')
+
+    args = parser.parse_args()
+    print(args.accumulate(args.integers))
+
 
 
 
