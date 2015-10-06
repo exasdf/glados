@@ -6,7 +6,7 @@ class vsphere(object):
         print "Test1"
 
     def asdf(self):
-        print "Test2"
+        print "Test2 "
 
 def main():
     parser = argparse.ArgumentParser(description='Process some integers.')
