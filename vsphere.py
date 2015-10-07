@@ -14,7 +14,7 @@ def main():
     parser.add_argument('--integers', metavar='Example', nargs='+', help='an integer for the accumulator')
 
     args = parser.parse_args()
-    print args.integers
+    print ' '.join(args.integers)
 
 
 
