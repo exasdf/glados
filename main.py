@@ -1,16 +1,21 @@
-import module
 import argparse
 
 
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument("echo", help="echo the string you use here")
+def main():
+    parser = argparse.ArgumentParser(description='Process some integers.')
+
+    parser.add_argument('-on', default="Empty", metavar='Example', nargs='+', help='Help')
+    parser.add_argument('-do', default="Empty", metavar='Example', nargs='+', help='Help')
+    parser.add_argument('-run', default="Empty", metavar='Example', nargs='+', help='Help')
+
+    parser.add_argument('-m', '-module', default="Empty", metavar='Example', nargs='+', help='Help')
+
+
     args = parser.parse_args()
-    print args.echo
+    print args.run
 
 
-    dog = module.Dog()
-    dog.whoAmI()
-    dog.eat()
-    dog.bark()
+
+if __name__ == '__main__':
+    main()

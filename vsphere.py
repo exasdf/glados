@@ -1,12 +1,6 @@
 import argparse
 
-class vsphere(object):
 
-    def __init__(self):
-        print "Test1"
-
-    def asdf(self):
-        print "Test2 "
 
 def main():
     parser = argparse.ArgumentParser(description='Process some integers.')
@@ -14,7 +8,7 @@ def main():
     parser.add_argument('--integers', metavar='Example', nargs='+', help='an integer for the accumulator')
 
     args = parser.parse_args()
-    print ' '.join(args.integers)
+    print args.integers
 
 
 
