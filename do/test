@@ -1,0 +1,2 @@
+echo "Test1"
+sudo echo "Test2"
