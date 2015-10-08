@@ -36,7 +36,7 @@ def get_User_Arguments():
 
     return arguments
 
-def execute(do, on, run, ):
+def execute(do, on, run):
 
     #Parses module to do engine to return module instructions.
     if do != None and on != None and run == None:
