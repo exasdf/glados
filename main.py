@@ -46,7 +46,7 @@ def execute(on, do, run, module):
         engine.ssh.run_Command( on, "vagrant", "vagrant", run )  # @UndefinedVariable
 
     elif module != "Empty":
-
+        engine.ssh.run_Command( on, "vagrant", "vagrant", run )  # @UndefinedVariable
 
     else:
         print '\033[91m' + u'\u2716'  + "  Invalid operation" + '\033[0m'
