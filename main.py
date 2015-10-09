@@ -35,29 +35,28 @@ def get_User_Arguments():
 def execute(on, do, run, module):
 
     #Parses module to do engine to return module instructions.
-    if do != None and on != None and run == None:
+    if do != "Empty":
         COMMAND = do.call(do)  # @UndefinedVariable
         #Executes command over ssh
         engine.ssh.run_Module( on, "vagrant", "vagrant", COMMAND )  # @UndefinedVariable
 
     #Else run the command straight on hosts
-    elif do == None and on != None and run != None:
-        COMMAND = run
+    elif run != "Empty":
         #Executes command over ssh
-        engine.ssh.run_Command( on, "vagrant", "vagrant", COMMAND )  # @UndefinedVariable
+        engine.ssh.run_Command( on, "vagrant", "vagrant", run )  # @UndefinedVariable
+
+    elif module != "Empty":
+
 
     else:
         print '\033[91m' + u'\u2716'  + "  Invalid operation" + '\033[0m'
         exit()
 
 
-
 def main():
     userInput = get_User_Arguments()
-    print userInput.run
-    print userInput.module
-
     execute(userInput.on, userInput.do, userInput.run, userInput.module)
 
 if __name__ == '__main__':
     main()
+
