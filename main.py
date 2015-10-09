@@ -1,8 +1,4 @@
 import argparse
-import engine.importdir
-engine.importdir.do("module", globals())
-
-
 
 def get_User_Arguments():
 
@@ -25,8 +21,8 @@ def get_User_Arguments():
                              nargs='+',
                              help='Help')
 
-    getArguments.add_argument('-m',
-                             '-module',
+    getArguments.add_argument('-module',
+                             '-m',
                              default="Empty",
                              metavar='Example',
                              nargs='+',
@@ -36,7 +32,7 @@ def get_User_Arguments():
 
     return arguments
 
-def execute(do, on, run):
+def execute(on, do, run, module):
 
     #Parses module to do engine to return module instructions.
     if do != None and on != None and run == None:
@@ -57,8 +53,11 @@ def execute(do, on, run):
 
 
 def main():
-    user = get_User_Arguments()
-    print user.run
+    userInput = get_User_Arguments()
+    print userInput.run
+    print userInput.module
+
+    execute(userInput.on, userInput.do, userInput.run, userInput.module)
 
 if __name__ == '__main__':
     main()
