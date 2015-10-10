@@ -1,4 +1,5 @@
 import argparse
+import engine
 
 def get_User_Arguments():
 
@@ -34,19 +35,15 @@ def get_User_Arguments():
 
 def execute(on, do, run, module):
 
-    #Parses module to do engine to return module instructions.
     if do != "Empty":
-        COMMAND = do.call(do)  # @UndefinedVariable
-        #Executes command over ssh
-        engine.ssh.run_Module( on, "vagrant", "vagrant", COMMAND )  # @UndefinedVariable
+        COMMAND = do.call(do)
+        engine.ssh.run_Module( on, "vagrant", "vagrant", COMMAND )
 
-    #Else run the command straight on hosts
     elif run != "Empty":
-        #Executes command over ssh
-        engine.ssh.run_Command( on, "vagrant", "vagrant", run )  # @UndefinedVariable
+        print run
 
     elif module != "Empty":
-        engine.ssh.run_Command( on, "vagrant", "vagrant", run )  # @UndefinedVariable
+        print module
 
     else:
         print '\033[91m' + u'\u2716'  + "  Invalid operation" + '\033[0m'
