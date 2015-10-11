@@ -11,26 +11,7 @@ class arguments:
     def get_Arguments(self):
         print "asdf"
         getArguments = argparse.ArgumentParser(description='Process some integers.')
-        getArguments.add_argument('-on',
-                                 default="Empty",
-                                 metavar='Example',
-                                 nargs='+',
-                                 help='Help')
-
-        getArguments.add_argument('-do',
-                                 default="Empty",
-                                 metavar='Example',
-                                 nargs='+',
-                                 help='Help')
-
-        getArguments.add_argument('-run',
-                                 default="Empty",
-                                 metavar='Example',
-                                 nargs='+',
-                                 help='Help')
-
-        getArguments.add_argument('-module',
-                                 '-m',
+        getArguments.add_argument('-target',
                                  default="Empty",
                                  metavar='Example',
                                  nargs='+',
