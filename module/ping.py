@@ -1,11 +1,7 @@
 __author__ = 'ex'
 
 import os
-import click
 import argparse
-
-@click.command()
-@click.option('-t', '--target', default=None, help='')
 
 class arguments:
     def get_Arguments(self):
@@ -41,7 +37,7 @@ class execute:
 
 def main():
     print "asdf"
-    ping.ping()
+
 if __name__ == '__main__':
     main()
 
