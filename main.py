@@ -39,13 +39,8 @@ def get_User_Arguments():
 
 def execute(on, do, run, module):
 
-
-
-
-
     if do != "Empty":
-        COMMAND = do.call(do)
-        engine.ssh.run_Module( on, "vagrant", "vagrant", COMMAND )
+        print do
 
     elif run != "Empty":
         print run
