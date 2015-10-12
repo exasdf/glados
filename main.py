@@ -40,6 +40,9 @@ def get_User_Arguments():
 def execute(on, do, run, module):
 
 
+
+
+
     if do != "Empty":
         COMMAND = do.call(do)
         engine.ssh.run_Module( on, "vagrant", "vagrant", COMMAND )
@@ -49,7 +52,7 @@ def execute(on, do, run, module):
 
     elif module != "Empty":
         print module
-        os.system('python module/ping.py localhost')
+        #os.system('python module/' + module + '.py -t ' + str(on))
 
     else:
         print '\033[91m' + u'\u2716'  + "  Invalid operation" + '\033[0m'
