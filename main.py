@@ -1,30 +1,63 @@
+import argparse
+import engine
+import lib
+import os
 
 
-class Animal:
-   def __init__(self):
-      print "Animal created"
 
-   def whoAmI(self):
-      print "Animal"
+def get_User_Arguments():
 
-   def eat(self):
-      print "Eating"
+    getArguments = argparse.ArgumentParser(description='Process some integers.')
+    getArguments.add_argument('-on',
+                             default="Empty",
+                             metavar='Example',
+                             nargs='+',
+                             help='Help')
+
+    getArguments.add_argument('-do',
+                             default="Empty",
+                             metavar='Example',
+                             nargs='+',
+                             help='Help')
+
+    getArguments.add_argument('-run',
+                             default="Empty",
+                             metavar='Example',
+                             nargs='+',
+                             help='Help')
+
+    getArguments.add_argument('-module',
+                             '-m',
+                             default="Empty",
+                             metavar='Example',
+                             nargs='+',
+                             help='Help')
+
+    arguments = getArguments.parse_args()
+
+    return arguments
+
+def execute(on, do, run, module):
+
+    if do != "Empty":
+        print do
+
+    elif run != "Empty":
+        print run
+
+    elif module != "Empty":
+        print module
+        #os.system('python module/' + module + '.py -t ' + str(on))
+
+    else:
+        print '\033[91m' + u'\u2716'  + "  Invalid operation" + '\033[0m'
+        exit()
 
 
-class Dog(Animal):
-   def __init__(self):
-      Animal.__init__(self)
-      print "Dog created"
+def main():
+    userInput = get_User_Arguments()
+    execute(userInput.on, userInput.do, userInput.run, userInput.module)
 
-   def whoAmI(self):
-      print "Dog"
-
-   def bark(self):
-      print "Woof!"
-
-
-dog = Dog()
-dog.whoAmI()
-dog.eat()
-dog.bark()
+if __name__ == '__main__':
+    main()
 
